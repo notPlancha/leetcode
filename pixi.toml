@@ -1,0 +1,12 @@
+[project]
+name = "leetcode"
+version = "0.1.0"
+description = "Add a short description here"
+authors = ["notPlancha <andre.plancha@hotmail.com>"]
+channels = ["conda-forge"]
+platforms = ["win-64"]
+
+[tasks]
+
+[dependencies]
+python = "==3.11"
