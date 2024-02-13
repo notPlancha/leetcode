@@ -1,5 +1,9 @@
+*.lprof
+
 temp.*
 temp/
+*.temp
+*.temp.*
 # pixi environments
 .pixi
 

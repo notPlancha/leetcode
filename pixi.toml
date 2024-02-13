@@ -7,13 +7,18 @@ channels = ["conda-forge"]
 platforms = ["win-64"]
 
 [tasks]
-profile = "python -m cProfile -o temp.prof"
-profile-viz = "snakeviz temp.prof"
+# profile = "python -m pyinstrument"
+profile = "kernprof -lv"
+profile-c = "python -m cProfile"
+# profile-viz = "snakeviz temp.prof"
 
 [dependencies]
 python = "==3.11"
 icecream = ">=2.1.3,<2.2"
 snakeviz = ">=2.2.0,<2.3"
+pyinstrument = ">=4.6.2,<4.7"
+line_profiler = ">=4.1.1,<4.2"
 
 [pypi-dependencies]
 watchpoints = "*"
+line-profiler-pycharm = "*"

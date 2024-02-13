@@ -1,4 +1,4 @@
-from main import Solution
+from pedro import Solution
 
 sol = Solution()
 def big_strings() -> tuple[str, str]:
