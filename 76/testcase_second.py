@@ -1,4 +1,4 @@
-from pedro import Solution
+from second import Solution
 
 sol = Solution()
 def big_strings() -> tuple[str, str]:
@@ -6,4 +6,4 @@ def big_strings() -> tuple[str, str]:
 
 s, t = big_strings()
 
-sol.minWindow(s, t)
+print(sol.minWindow(s, t))

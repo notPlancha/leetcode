@@ -7,4 +7,4 @@ def big_strings() -> tuple[str, str]:
 
 s, t = big_strings()
 
-sol.minWindow(s, t)
+print(sol.minWindow(s, t))

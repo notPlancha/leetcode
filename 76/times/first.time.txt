@@ -1,0 +1,37 @@
+Wrote profile results to testcase_first.py.lprof
+Timer unit: 1e-06 s
+
+Total time: 145.234 s
+File: C:\Users\Plancha\Desktop\leetcode\.\76\first.py
+Function: minWindow at line 14
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    14                                             @profile
+    15                                             def minWindow(self, s: str, t: str) -> str:
+    16         1        348.6    348.6      0.0      letters_of_t = Counter(t)
+    17         1          0.6      0.6      0.0      t_len = len(t)  # at least
+    18         1          0.4      0.4      0.0      ret: str | None = None
+    19
+    20    100001      31190.8      0.3      0.0      for pointer_s, value_s in enumerate(s):  # or s[:-len(t) + 1] (until it's possible) but will raise smts
+    21    100000      32217.8      0.3      0.0        if value_s in letters_of_t:
+    22    100000     585408.3      5.9      0.4          letters_of_t_copy: Counter = letters_of_t.copy()  # so it doens't remove the first one
+    23    100000   28192076.7    281.9     19.4          letters_of_t_copy -= Counter(s[pointer_s: pointer_s + t_len])  # execute on current without checking (opt)
+    24                                                   # letters_of_t_copy = +letters_of_t_copy # output already rejects zero or less (.subtract doesn't)
+    25    100000     121671.7      1.2      0.1          if letters_of_t_copy.total() == 0: return s[pointer_s: pointer_s + t_len]  # smallest possible
+    26    100000      24896.2      0.2      0.0          enumStart = pointer_s + t_len
+    27                                                   # count from the current pointer
+    28 113897497   30840784.2      0.3     21.2          for inner_pointer_s, inner_value_s in enumerate(s[enumStart:], start=enumStart):
+    29 113885837   54048310.8      0.5     37.2            if letters_of_t_copy[inner_value_s] != 0:
+    30  22961423    8903217.2      0.4      6.1              letters_of_t_copy[inner_value_s] -= 1
+    31  22961423   22195732.5      1.0     15.3              if letters_of_t_copy.total() == 0:
+    32                                                         # found match
+    33     88340      16474.2      0.2      0.0                if ret is None:
+    34         1          2.5      2.5      0.0                  ret = s[pointer_s: inner_pointer_s + 1]  # batota
+    35                                                         else:
+    36     88339     205114.2      2.3      0.1                  ret = min(ret, s[pointer_s: inner_pointer_s + 1], key=len)  # n sei pq ele se queixa
+    37     88340      36645.8      0.4      0.0                break
+    38         1          0.5      0.5      0.0      if ret is None:
+    39                                                 return ""
+    40                                               else:
+    41         1          0.2      0.2      0.0        return ret
