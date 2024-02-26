@@ -1,0 +1,39 @@
+Wrote profile results to testcase_second.py.lprof
+Timer unit: 1e-06 s
+
+Total time: 0.386311 s
+File: C:\Users\Plancha\Desktop\leetcode\.\2709\second.py
+Function: canTraverseAllPairs at line 21
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    21                                             @profile
+    22                                             def canTraverseAllPairs(self, nums: list[int]) -> bool:
+    23         1          0.6      0.6      0.0      n_lists = 0 # unique, to always have unique keys
+    24         1          0.4      0.4      0.0      dict_of_queue: dict[int, deque[int]] = {}  # try with different stuff
+    25       901        247.8      0.3      0.1      for num in nums:
+    26       900        164.8      0.2      0.0        start_joining_key: int | None = None
+    27       900        182.1      0.2      0.0        keys_to_delete: list[int] = [] # dictionary cant chang size during iteration
+    28    252057      83812.8      0.3     21.7        for key, queue in dict_of_queue.items():
+    29    251157      45819.8      0.2     11.9          if start_joining_key is None:
+    30    430091      92864.6      0.2     24.0            for val in queue:
+    31    267723      89211.1      0.3     23.1              if gcd(num, val) != 1:
+    32                                                         # join the list
+    33       334        123.7      0.4      0.0                queue.append(num)
+    34                                                         # one matched and joined the set
+    35                                                         # so check for others to join this one
+    36       334         61.0      0.2      0.0                start_joining_key = key
+    37       334         67.9      0.2      0.0                break  # !!the optmization
+    38                                                   else:  # already found a match
+    39    180519      40650.1      0.2     10.5            for val in queue:
+    40     92074      31764.2      0.3      8.2              if gcd(num, val) != 1:
+    41                                                         # currently joining so it'll join the sets, and delete the latter from the list
+    42        10         10.6      1.1      0.0                dict_of_queue[start_joining_key] += queue
+    43        10          9.9      1.0      0.0                keys_to_delete.append(key)
+    44        10          2.2      0.2      0.0                break
+    45       910        277.4      0.3      0.1        for key in keys_to_delete:
+    46        10         10.5      1.1      0.0          del dict_of_queue[key]
+    47       900        221.9      0.2      0.1        if start_joining_key is None:  # if it's still none it's a new set:
+    48       566        627.4      1.1      0.2          dict_of_queue[n_lists] = deque([num])
+    49       566        178.4      0.3      0.0          n_lists += 1
+    50         1          2.1      2.1      0.0      return len(dict_of_queue) == 1

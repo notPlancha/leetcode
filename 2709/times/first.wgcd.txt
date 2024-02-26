@@ -1,0 +1,22 @@
+Wrote profile results to testcase_first.py.lprof
+Timer unit: 1e-06 s
+
+Total time: 0.472358 s
+File: C:\Users\Plancha\Desktop\leetcode\.\2709\first.py
+Function: canTraverseAllPairs at line 75
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    75                                             @profile
+    76                                             def canTraverseAllPairs(self, nums: list[int]) -> bool:
+    77         1          1.0      1.0      0.0      if len(nums) == 1:  # nowhere to transverse
+    78                                                 return True
+    79         1         19.1     19.1      0.0      ret = Graph(nodes=nums)
+    80         1          0.6      0.6      0.0      if 1 in ret.nodes:  # gcd(1, n) = 1, testing on ret.nodes because it's a set
+    81                                                 return False
+    82                                               # build edges
+    83       871        159.6      0.2      0.0      for a in ret.nodes:
+    84    757770     146978.2      0.2     31.1        for b in ret.nodes:
+    85    756900     266360.6      0.4     56.4          if a != b and gcd(a, b) > 1:
+    86     52026      58805.8      1.1     12.4            ret.add_edge(a, b)
+    87         1         33.6     33.6      0.0      return ret.is_complete()

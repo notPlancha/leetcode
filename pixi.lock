@@ -21,6 +21,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/pygments-2.17.2-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/six-1.16.0-pyh6c4a22f_0.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/noarch/snakeviz-2.2.0-pyhd8ed1ab_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/sortedcontainers-2.4.0-pyhd8ed1ab_0.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/noarch/stack_data-0.6.2-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/traitlets-5.14.1-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/typing_extensions-4.9.0-pyha770c72_0.conda
@@ -531,6 +532,23 @@ packages:
   - pkg:pypi/snakeviz
   size: 171161
   timestamp: 1682336626654
+- kind: conda
+  name: sortedcontainers
+  version: 2.4.0
+  build: pyhd8ed1ab_0
+  subdir: noarch
+  noarch: python
+  url: https://conda.anaconda.org/conda-forge/noarch/sortedcontainers-2.4.0-pyhd8ed1ab_0.tar.bz2
+  sha256: 0cea408397d50c2afb2d25e987ebac4546ae11e549d65b1403d80dc368dfaaa6
+  md5: 6d6552722448103793743dabfbda532d
+  depends:
+  - python >=2.7
+  license: Apache-2.0
+  license_family: APACHE
+  purls:
+  - pkg:pypi/sortedcontainers
+  size: 26314
+  timestamp: 1621217159824
 - kind: conda
   name: stack_data
   version: 0.6.2

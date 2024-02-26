@@ -13,6 +13,8 @@ from icecream import ic
 from math import gcd
 from collections import defaultdict
 
+from line_profiler import profile
+
 
 class Graph:
   def __init__(self, nodes: list | set):
@@ -69,7 +71,14 @@ class Graph:
     return f"{above_line}\n{middle_line}\n{below_line}"
 
 
+def rprime(a, b):
+  while b:  # b != 0
+    a, b = b, a % b
+  return a == 1
+
+
 class Solution:
+  @profile
   def canTraverseAllPairs(self, nums: list[int]) -> bool:
     if len(nums) == 1:  # nowhere to transverse
       return True
@@ -90,6 +99,7 @@ class Solution:
     assert ic(self.canTraverseAllPairs(ic([3, 25]))) is False
     assert ic(self.canTraverseAllPairs(ic([30, 25]))) is True
     assert ic(self.canTraverseAllPairs(ic([1, 1]))) is False
+    assert ic(self.canTraverseAllPairs(ic([[63,85,70,13,30,60,65,60,75,77,70,60]])))
 
 
 if __name__ == "__main__":
