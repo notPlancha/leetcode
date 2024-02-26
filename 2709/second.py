@@ -10,44 +10,44 @@ Return true if it is possible to traverse between all such pairs of indices, or 
 """
 
 from icecream import ic
+from line_profiler import profile
 
 from math import gcd
 from collections import deque
-
-from line_profiler import profile
 
 
 class Solution:
   @profile
   def canTraverseAllPairs(self, nums: list[int]) -> bool:
-    n_lists = 0 # unique, to always have unique keys
-    dict_of_queue: dict[int, deque[int]] = {}  # try with different stuff # TODO change to list somewhow
+    list_of_queues: list[list[int | deque[int]] | None] = []  # list(tuple(key, queue)) # ignore is used so the gc doesn't pickup the deque
     for num in nums:
       start_joining_key: int | None = None
-      keys_to_delete: list[int] = [] # dictionary cant chang size during iteration
-      for key, queue in dict_of_queue.items():
+      for queue_t in list_of_queues:
+        if queue_t is None: continue
         if start_joining_key is None:
-          for val in queue:
+          for val in queue_t[1]:
             if gcd(num, val) != 1:
               # join the list
-              queue.append(num)
+              queue_t[1].append(num)
               # one matched and joined the set
               # so check for others to join this one
-              start_joining_key = key
+              start_joining_key = queue_t[0]
               break  # !!the optmization
         else:  # already found a match
-          for val in queue:
+          for val in queue_t[1]:
             if gcd(num, val) != 1:
               # currently joining so it'll join the sets, and delete the latter from the list
-              dict_of_queue[start_joining_key] += queue
-              keys_to_delete.append(key)
+              list_of_queues[start_joining_key][1] += queue_t[1]
+              list_of_queues[queue_t[0]] = None
               break
-      for key in keys_to_delete:
-        del dict_of_queue[key]
+      del_keys = []
       if start_joining_key is None:  # if it's still none it's a new set:
-        dict_of_queue[n_lists] = deque([num])
-        n_lists += 1
-    return len(dict_of_queue) == 1
+        new_queue = deque()
+        new_queue.append(num)
+        list_of_queues.append([
+          len(list_of_queues), new_queue
+        ])
+    return sum(1 for i in list_of_queues if i is not None) == 1
 
   def test(self):
     assert ic(self.canTraverseAllPairs(ic([2, 3, 6]))) is True
@@ -60,6 +60,7 @@ class Solution:
     assert ic(self.canTraverseAllPairs(ic([30]))) is True
     assert ic(self.canTraverseAllPairs(ic([30, 30]))) is True
     assert ic(self.canTraverseAllPairs(ic([63, 85, 70, 13, 30, 60, 65, 60, 75, 77, 70, 60]))) is True
+    assert ic(self.canTraverseAllPairs(ic([45, 49, 20, 13, 21, 42, 30, 30, 39, 21, 28, 45, 22]))) is True
 
 
 if __name__ == "__main__":
