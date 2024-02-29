@@ -14,7 +14,7 @@ from line_profiler import profile
 
 from math import gcd
 from collections import deque
-
+from sortedcontainers import sortedlist
 
 class Solution:
   @profile
