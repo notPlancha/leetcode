@@ -100005,4 +100005,4 @@ par = [
     46972,
 ]
 
-print(sol.canTraverseAllPairs(par[100:1000]))
+print(sol.canTraverseAllPairs(par[100:10000]))

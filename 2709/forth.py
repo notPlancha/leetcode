@@ -33,25 +33,30 @@ def factors(num: int) -> list:
 
 class Solution:
   def canTraverseAllPairs(self, nums: list[int]) -> bool:
+    # t = TicToc()
+    # t.tic()
     if len(nums) == 1:
       return True
     if 1 in (nums := set(nums)):
       return False
     nums = list(nums)
     map = dict()
-
-
+    # t.tic()
     # create factors
     for num in nums:
       map[num] = set(factors(num))
+    # t.toc()
     # create graph
     graph = defaultdict(list)
     for i in range(len(nums)):
       for j in range(i + 1, len(nums)):
-        if len(map[nums[i]].intersection(map[nums[j]])) > 0:
-          graph[i].append(j)
-          graph[j].append(i)
-
+        for prime in map[nums[i]]:
+          if prime in map[nums[j]]:
+            graph[i].append(j)
+            graph[j].append(i)
+            break
+    # t.toc()
+    # t.tic()
     # dfs
     visited = set()
     stack = [0]
@@ -60,6 +65,7 @@ class Solution:
       if node not in visited:
         visited.add(node)
         stack.extend([n for n in graph[node] if n not in visited])
+    # t.toc()
     return len(visited) == len(nums)
 
   def test(self):
