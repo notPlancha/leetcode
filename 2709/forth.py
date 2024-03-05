@@ -1,7 +1,7 @@
 from icecream import ic
 from pytictoc import TicToc
 import math
-from collections import defaultdict
+from collections import defaultdict, Counter
 
 
 # Copyright (c) 2018 Indrajit Jana - https://mit-license.org/
@@ -19,6 +19,8 @@ def factor(num: int) -> int:
       # dakra saving all the tests for number which are 3 mod 6.
     else:
       return num
+
+
 # Copyright (c) 2018 Indrajit Jana - https://mit-license.org/
 def factors(num: int) -> list:
   fact = factor(num)
@@ -35,16 +37,23 @@ class Solution:
   def canTraverseAllPairs(self, nums: list[int]) -> bool:
     # t = TicToc()
     # t.tic()
+
     if len(nums) == 1:
       return True
-    if 1 in (nums := set(nums)):
+    if 1 in (set_nums := Counter(nums)):
       return False
-    nums = list(nums)
+    if len(set_nums) == 1:
+      return True
+    max_nums: float = max(nums) / 2
+    # t.toc()
     map = dict()
     # t.tic()
     # create factors
     for num in nums:
-      map[num] = set(factors(num))
+      facts = factors(num)
+      if len(facts) == 1 and facts[0] > max_nums:
+        return False
+      map[num] = set(facts)
     # t.toc()
     # create graph
     graph = defaultdict(list)
@@ -69,6 +78,7 @@ class Solution:
     return len(visited) == len(nums)
 
   def test(self):
+    assert ic(self.canTraverseAllPairs(ic([2, 2]))) is True
     assert ic(self.canTraverseAllPairs(ic([2, 3, 6]))) is True
     assert ic(self.canTraverseAllPairs(ic([3, 9, 5]))) is False
     assert ic(self.canTraverseAllPairs(ic([4, 3, 12, 8]))) is True
