@@ -13,9 +13,9 @@ class Solution:
 
   def hasCycle(self, head: ListNode | None) -> bool:
     if head is None: return False
-    ret = []
+    ret = set()
     for curr in self.gen(head):
       if curr in ret:
         return True
-      ret.append(curr)
+      ret.add(curr)
     return False
