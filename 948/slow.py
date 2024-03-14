@@ -11,7 +11,9 @@ class Solution:
           score = 0
           for token in perm:
             currPower, score = self.play(token, currPower, score)
-          if score > ret: ret = score
+          if score > ret:
+            ic(perm)
+            ret = score
         except StopIteration:
           continue
     return ret
@@ -27,9 +29,11 @@ class Solution:
     return power, score
   def test(self):
     assert ic(self.bagOfTokensScore( [100, 200, 300, 400], 200)) == 2
+    assert ic(self.bagOfTokensScore( [100, 200, 300, 400], 200)) == 2
     assert ic(self.bagOfTokensScore( [200,100], 150)) == 1
     assert ic(self.bagOfTokensScore( [100], 50)) == 0
-    ic(self.bagOfTokensScore( [52,65,35,88,28,1,4,68,56,95], 94))
+    # ic(self.bagOfTokensScore( [52,65,35,88,28,1,4,68,56,95], 94))
+    assert ic(self.bagOfTokensScore( [71,55,82], 54)) == 0
 if __name__ == '__main__':
   s = Solution()
   s.test()
