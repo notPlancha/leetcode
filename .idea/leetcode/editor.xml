@@ -3,6 +3,17 @@
   <component name="LeetcodeEditor">
     <option name="projectConfig">
       <map>
+        <entry key="$USER_HOME$/AppData/Local/Temp/leetcode/editor/en/[143]Reorder List.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/en/doc/content/[143]Reorder List.md" />
+              <option name="frontendQuestionId" value="leetcode.com143" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/en/[143]Reorder List.py" />
+              <option name="titleSlug" value="reorder-list" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$USER_HOME$/AppData/Local/Temp/leetcode/editor/en/[234]Palindrome Linked List.py">
           <value>
             <LeetcodeEditor>
