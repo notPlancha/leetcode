@@ -47,6 +47,28 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$USER_HOME$/AppData/Local/Temp/leetcode/editor/en/[2958]Length of Longest Subarray With at Most K Frequency.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/en/doc/content/[2958]Length of Longest Subarray With at Most K Frequency.md" />
+              <option name="frontendQuestionId" value="leetcode.com2958" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/en/[2958]Length of Longest Subarray With at Most K Frequency.py" />
+              <option name="titleSlug" value="length-of-longest-subarray-with-at-most-k-frequency" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/AppData/Local/Temp/leetcode/editor/en/[2962]Count Subarrays Where Max Element Appears at Least K Times.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/en/doc/content/[2962]Count Subarrays Where Max Element Appears at Least K Times.md" />
+              <option name="frontendQuestionId" value="leetcode.com2962" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/en/[2962]Count Subarrays Where Max Element Appears at Least K Times.py" />
+              <option name="titleSlug" value="count-subarrays-where-max-element-appears-at-least-k-times" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$USER_HOME$/AppData/Local/Temp/leetcode/editor/en/[41]First Missing Positive.py">
           <value>
             <LeetcodeEditor>
