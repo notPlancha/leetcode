@@ -3,6 +3,17 @@
   <component name="LeetcodeEditor">
     <option name="projectConfig">
       <map>
+        <entry key="$USER_HOME$/AppData/Local/Temp/leetcode/editor/en/[1438]Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/en/doc/content/[1438]Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit.md" />
+              <option name="frontendQuestionId" value="leetcode.com1438" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/en/[1438]Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit.py" />
+              <option name="titleSlug" value="longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$USER_HOME$/AppData/Local/Temp/leetcode/editor/en/[143]Reorder List.py">
           <value>
             <LeetcodeEditor>
@@ -11,6 +22,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/en/[143]Reorder List.py" />
               <option name="titleSlug" value="reorder-list" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/AppData/Local/Temp/leetcode/editor/en/[1627]Graph Connectivity With Threshold.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/en/doc/content/[1627]Graph Connectivity With Threshold.md" />
+              <option name="frontendQuestionId" value="leetcode.com1627" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/en/[1627]Graph Connectivity With Threshold.py" />
+              <option name="titleSlug" value="graph-connectivity-with-threshold" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -165,6 +187,17 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/en/[843]Guess the Word.py" />
               <option name="titleSlug" value="guess-the-word" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/AppData/Local/Temp/leetcode/editor/en/[992]Subarrays with K Different Integers.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/en/doc/content/[992]Subarrays with K Different Integers.md" />
+              <option name="frontendQuestionId" value="leetcode.com992" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/en/[992]Subarrays with K Different Integers.py" />
+              <option name="titleSlug" value="subarrays-with-k-different-integers" />
             </LeetcodeEditor>
           </value>
         </entry>
